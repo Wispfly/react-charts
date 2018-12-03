@@ -89,52 +89,51 @@ class App extends Component {
     return (
       <div>
         <div className="header"></div>
-      <Jumbotron>
-        <div ref='root'>
+        <Jumbotron>
+          <div ref='root'>
             <div style={{width: '100%'}}> 
-            <Chart
-          chartType="ColumnChart"
-          width="100%"
-          height="400px"
-          data={this.state.data}
-          options={{
-            title: "Statistic Bar Chart"
-          }}
+              <Chart
+                chartType="ColumnChart"
+                width="100%"
+                height="400px"
+                data={this.state.data}
+                options={{
+                  title: "Statistic Bar Chart"
+                }}
               />
             </div>
-        </div>
-        <div className="container pt-5">
-        <table>
-          <tbody>
-            {
-              this.state.data ? this.state.data.map((obj, key) => {
-                if(key !== 0){
-                  return (
-                    <tr key={key}>
-                      <td>
-                        <Input type="date" name="text" value={this.state.data[key][0]} onChange={(e) => this.setValue(e, key, 0)}></Input>
-                      </td>
-                      <td>
-                        <Input type="number" name="value" value={this.state.data[key][1]} onChange={(e) => this.setValue(e, key, 1)}></Input>
-                      </td>
-                      <td>
-                        <Button color="danger" onClick={(e) => this.deleteRow(e, key)} className="del-btn">Delete</Button>
-                      </td> 
-                    </tr>
-                  )
-                }
-                else {
-                  return <tr key={key}><th>Date</th><th>Value</th><th></th></tr>
-                }
-              }) : ''
-            }
-          </tbody>
-        </table>
-       
+          </div>
+          <div className="container pt-5">
+          <table>
+            <tbody>
+              {
+                this.state.data ? this.state.data.map((obj, key) => {
+                  if(key !== 0){
+                    return (
+                      <tr key={key}>
+                        <td>
+                          <Input type="date" name="text" value={this.state.data[key][0]} onChange={(e) => this.setValue(e, key, 0)}></Input>
+                        </td>
+                        <td>
+                          <Input type="number" name="value" value={this.state.data[key][1]} onChange={(e) => this.setValue(e, key, 1)}></Input>
+                        </td>
+                        <td>
+                          <Button color="danger" onClick={(e) => this.deleteRow(e, key)} className="del-btn">Delete</Button>
+                        </td> 
+                      </tr>
+                    )
+                  }
+                  else {
+                    return <tr key={key}><th>Date</th><th>Value</th><th></th></tr>
+                  }
+                }) : ''
+              }
+            </tbody>
+          </table>
             <Form onSubmit={this.onSubmit}>
-            <table>
-          <tbody>
-              <tr>
+              <table>
+                <tbody>
+                  <tr>
                     <td>
                       <Input type="date" name="date" value={this.state.defaultDate}  onChange={this.setDefaultDate}></Input>
                     </td>
@@ -144,13 +143,12 @@ class App extends Component {
                     <td>
                       <Button color="info" type="submit" className="add-btn">Insert</Button>
                     </td>  
-              </tr>
-              </tbody>
-        </table>
+                  </tr>
+                </tbody>
+              </table>
             </Form>
-         
-        </div>
-      </Jumbotron>
+          </div>
+        </Jumbotron>
       </div>
     );
   }
