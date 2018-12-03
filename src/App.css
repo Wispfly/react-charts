@@ -30,3 +30,18 @@
     transform: rotate(360deg);
   }
 }
+
+.header{
+  width: 100%;
+  height: 4rem;
+  background-color: #6c757d;
+}
+
+table{
+  margin: 0 auto;
+  margin-bottom: 2rem;
+}
+
+th,td{
+  padding: 0.5rem;
+}
